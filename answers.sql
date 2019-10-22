@@ -310,3 +310,33 @@ orders made by 'pclark74@gmail.com'. Use a subselect to do this.
 SELECT id, status, order_total FROM orders
 WHERE customer_id=(SELECT DISTINCT id FROM customers WHERE email='pclark74@gmail.com')
 ;
+
+
+==========
+22
+
+-----
+
+Write a query that shows the id, status, and order total for all orders
+made by 'pclark74@gmail.com'. Use a join to do this.
+
+-----
+
+
+SELECT orders.id, status, order_total FROM orders
+JOIN customers ON (customer_id=customers.id)
+WHERE email='pclark74@gmail.com';
+
+
+==========
+23
+
+-----
+
+Write a query that shows all columns in the order_items table for order #2725.
+
+-----
+
+
+SELECT * FROM order_items
+WHERE order_id=2725;
